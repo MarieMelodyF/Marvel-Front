@@ -45,7 +45,7 @@ const Signup = () => {
 
       const token = response.data.token;
       setToken(token);
-      // Navigate("/characters");
+      Navigate("/characters");
     } catch (error) {
       console.log(error.response);
     }
@@ -68,7 +68,7 @@ const Signup = () => {
             type="email"
             name="email"
             id="email"
-            // value={email}
+            value={email}
             placeholder="captainmarvel@marvel.com"
           />
           <input
@@ -76,7 +76,7 @@ const Signup = () => {
             type="password"
             name="password"
             id="password"
-            // value={password}
+            value={password}
             placeholder="Password"
           />
         </form>
