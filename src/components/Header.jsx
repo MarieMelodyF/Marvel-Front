@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import Nav from "./Nav";
+import logo from "../images/logo-marvel.png";
 
 const Header = ({ token, setToken }) => {
   return (
@@ -8,7 +9,7 @@ const Header = ({ token, setToken }) => {
       <header className="container">
         <div className="header-container">
           <Link to="/">
-            <img src="/src/images/logo-marvel.png" alt="" />
+            <img src={logo} alt="" />
           </Link>
           {token ? (
             <button
