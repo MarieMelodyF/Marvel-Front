@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Charaters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -45,7 +46,9 @@ const Charaters = () => {
   }, [search, skip]);
 
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <div>
+      <Loader />
+    </div>
   ) : (
     <>
       <div className="search-bar">
@@ -103,8 +106,11 @@ const Charaters = () => {
               <Link to={`/comics/${_id}`} key={index}>
                 <main key={id}>
                   <div className="card-wrap">
-                    <p className="description-comics">{name}</p>
-                    <img className="img-Charaters" src={imageUrl} alt="" />
+                    <h3 className="description-comics">{name}</h3>
+                    <div className="favoris">
+                      <img className="img-Charaters" src={imageUrl} alt="" />
+                      <i class="fa-solid fa-star fa-xl fa-border "></i>
+                    </div>
                   </div>
                 </main>
               </Link>

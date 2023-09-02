@@ -9,9 +9,7 @@ const Home = () => {
       <main>
         <div className="background-home">
           <Link to="/comics">
-            <button className="button-home">
-              Entrez dans l'univers Marvel
-            </button>
+            <p className="button-home">Entrez dans l'univers Marvel</p>
           </Link>
         </div>
       </main>

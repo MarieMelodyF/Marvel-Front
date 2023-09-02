@@ -48,7 +48,7 @@ const Signup = () => {
       setToken(token);
     } catch (error) {
       console.log(error.response);
-      alert("Vous devez remplir tout les champs 😉 !");
+      // alert("Vous devez remplir tout les champs 😉 !");
 
       if (
         error.response.data.message ===

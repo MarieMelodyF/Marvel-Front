@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Nav from "../components/Nav";
-
+import Loader from "../components/Loader";
 // import { Link } from "react-router-dom";
 
 const Comics = () => {
@@ -38,7 +38,9 @@ const Comics = () => {
     fetchData();
   }, [search, skip]);
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <div>
+      <Loader />
+    </div>
   ) : (
     <>
       <div className="search-bar">

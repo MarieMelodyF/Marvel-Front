@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import Loader from "../components/Loader";
 
 const Charaters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -38,7 +39,9 @@ const Charaters = () => {
   }, []);
 
   return isLoading ? (
-    <span>En cours de chargement... </span>
+    <div>
+      <Loader />
+    </div>
   ) : (
     <div className="character-Info container">
       <h1 className="name-Character">{data.name}</h1>
