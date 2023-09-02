@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { Component } from "react";
 import Nav from "./Nav";
-import logo from "/logo-marvel.png";
+import logo from "/public/logo-marvel.png";
 
 const Header = ({ token, setToken }) => {
   return (
