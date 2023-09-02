@@ -1,9 +1,9 @@
 import axios from "axios";
-import React, { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -44,10 +44,24 @@ const Signup = () => {
       console.log("Submit ==> ", data);
 
       const token = response.data.token;
+      navigate("/characters");
       setToken(token);
-      Navigate("/characters");
     } catch (error) {
       console.log(error.response);
+      alert("Vous devez remplir tout les champs 😉 !");
+
+      if (
+        error.response.data.message ===
+        "Email already exist ! Use your account 🚀"
+      ) {
+        setErrorMessage("Email already exist ! Use your account 🚀");
+        alert("Email already exist ! Use your account 🚀");
+      } else if (
+        error.response.data.message ===
+        "This username already exist ! Choose another username 🤟🏼 !"
+      ) {
+        alert("This username already exist ! Choose another username 🤟🏼 !");
+      }
     }
   };
 
@@ -81,6 +95,8 @@ const Signup = () => {
           />
         </form>
         <div></div>
+      </div>
+      <Link to="/characters">
         <button
           onClick={handleSubmit}
           className="form-validation"
@@ -88,7 +104,10 @@ const Signup = () => {
         >
           S'inscrire
         </button>
-      </div>
+      </Link>
+      <Link to="/user/login">
+        <p>Already registered ? use login</p>
+      </Link>
     </div>
   );
 };
