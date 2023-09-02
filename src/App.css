@@ -2,7 +2,7 @@
   background-color: black;
 } */
 
-@import "./loader.css";
+@import "./Loader.css";
 
 .container {
   width: 1280px;
