@@ -9,7 +9,7 @@ const Header = ({ token, setToken }) => {
       <header className="container">
         <div className="header-container">
           <Link to="/">
-            <img src={logo} alt="" />
+            <img src={logo} alt="logo marvel" />
           </Link>
           {token ? (
             <button
