@@ -22,7 +22,7 @@ const Charaters = () => {
   useEffect(() => {
     let count = "";
     let page = "";
-    console.log("page", page);
+    // console.log("page", page);
     const fetchData = async () => {
       try {
         const name = search || "";
