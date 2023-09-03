@@ -562,13 +562,13 @@ form {
     height: auto;
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   .card-comics {
     display: flex;
     justify-content: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     flex-wrap: wrap;
     margin-top: 50px;
     gap: 30px;
@@ -595,7 +595,7 @@ form {
   .container {
     width: 80%;
     height: auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   #root {
     /* background-color: aqua; */
@@ -604,7 +604,7 @@ form {
   .card-comics {
     display: flex;
     justify-content: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     flex-wrap: wrap;
     margin-top: 50px;
     gap: 30px;
