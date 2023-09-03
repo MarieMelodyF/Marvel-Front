@@ -12,6 +12,7 @@ const Login = ({ token, setToken }) => {
     <div className="form-container">
       <div className="form">
         <form
+          className="signup-input"
           onSubmit={async (event) => {
             event.preventDefault();
 
@@ -72,13 +73,13 @@ const Login = ({ token, setToken }) => {
           >
             Log in
           </button>
-          <Link to="/user/signup">
-            <span className="subscribe">
-              You dont have a account ? Come on, come to Sign up !
-            </span>
-          </Link>
         </form>
       </div>
+      <Link to="/user/signup">
+        <p className="subscribe">
+          You dont have a account ? Come on, come to Sign up !
+        </p>
+      </Link>
     </div>
   );
 };

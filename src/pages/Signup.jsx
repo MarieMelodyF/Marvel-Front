@@ -68,7 +68,8 @@ const Signup = () => {
   return (
     <div className="form-container">
       <div className="form">
-        <form>
+        <form className="signup-input">
+          <h1>Register now</h1>
           <input
             onChange={handleUsernameChange}
             type="text"
@@ -94,7 +95,6 @@ const Signup = () => {
             placeholder="Password"
           />
         </form>
-        <div></div>
       </div>
       <Link to="/characters">
         <button
@@ -102,11 +102,11 @@ const Signup = () => {
           className="form-validation"
           type="submit"
         >
-          S'inscrire
+          Sign up
         </button>
       </Link>
       <Link to="/user/login">
-        <p>Already registered ? use login</p>
+        <p>Already registered ? Use Log in !</p>
       </Link>
     </div>
   );

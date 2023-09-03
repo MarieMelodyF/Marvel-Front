@@ -106,7 +106,7 @@ const Charaters = () => {
               <Link to={`/comics/${_id}`} key={index}>
                 <main key={id}>
                   <div className="card-wrap">
-                    <h3 className="description-comics">{name}</h3>
+                    <h3 className="description-characters">{name}</h3>
                     <div className="favoris">
                       <img className="img-Charaters" src={imageUrl} alt="" />
                       <i className="fa-solid fa-star fa-xl fa-border "></i>

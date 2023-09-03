@@ -18,15 +18,15 @@ const Header = ({ token, setToken }) => {
                 setToken("");
               }}
             >
-              Se déconnecter
+              Log Out
             </button>
           ) : (
             <div>
               <Link to="/user/signup">
-                <button> S'inscrire</button>
+                <button>Sign up</button>
               </Link>
               <Link to="/user/login">
-                <button>Se connecter</button>
+                <button>Log in</button>
               </Link>
             </div>
           )}

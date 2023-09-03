@@ -13,10 +13,12 @@ const Comics = () => {
   const [skip, setSkip] = useState(0);
   const [count, setCount] = useState();
   const [limit, setLimit] = useState(100);
-  const [favorites, setFavorites] = useState([]);
+  const [favoritesComics, setFavoritesComics] = useState([]);
 
   // requete axios
   useEffect(() => {
+    const usertoken = Cookies.get("token");
+
     let count = "";
     const fetchData = async () => {
       try {
@@ -97,7 +99,7 @@ const Comics = () => {
               <main key={_id}>
                 <div className="card-wrap">
                   <div className="cart-img">
-                    <p className="description-comics">{title}</p>
+                    <p className="title-comics">{title}</p>
                     <div>
                       <img
                         className="img-comics"
@@ -108,10 +110,17 @@ const Comics = () => {
                       <div
                         className="favoris"
                         onClick={() => {
-                          const newFavorites = [...favorites];
-                          newFavorites.push(imageUrl, title);
-                          setFavorites(newFavorites);
-                          console.log("favorites click", favorites);
+                          const newFavoritesComics = [...favoritesComics];
+                          newFavoritesComics.push({
+                            imageUrl: imageUrl,
+                            title: title,
+                          });
+                          setFavoritesComics(newFavoritesComics);
+                          Cookies.set("favorites", newFavoritesComics, {
+                            expires: 30,
+                          });
+
+                          console.log("favorites", newFavoritesComics);
                         }}
                       >
                         <i className="fa-solid fa-star fa-xl fa-border "></i>
