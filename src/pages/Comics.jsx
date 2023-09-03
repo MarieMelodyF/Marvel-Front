@@ -13,6 +13,7 @@ const Comics = () => {
   const [skip, setSkip] = useState(0);
   const [count, setCount] = useState();
   const [limit, setLimit] = useState(100);
+  const [favorites, setFavorites] = useState([]);
 
   // requete axios
   useEffect(() => {
@@ -107,10 +108,10 @@ const Comics = () => {
                       <div
                         className="favoris"
                         onClick={() => {
-                          const newFavorite = [...favorite];
-                          newFavorite.push(imageUrl, title);
-                          setfavorite(newFavorite);
-                          console.log(favorite);
+                          const newFavorites = [...favorites];
+                          newFavorites.push(imageUrl, title);
+                          setFavorites(newFavorites);
+                          console.log("favorites click", favorites);
                         }}
                       >
                         <i className="fa-solid fa-star fa-xl fa-border "></i>

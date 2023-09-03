@@ -30,7 +30,7 @@ const Charaters = () => {
         // console.log("response.data =>", response.data.count);
         count = response.data.count;
         page = response.data.count / 100;
-        console.log(page);
+        // console.log(page);
         // console.log("count=>", count);
         // console.log("data.results ==>", response.data.results);
         setData(response.data);
