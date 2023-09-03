@@ -530,3 +530,93 @@ form {
   justify-content: center;
   align-items: flex-end;
 }
+
+/* --------------------- */
+/* --------------------- */
+/* --------------------- */
+/* --------------------- */
+/* --------------------- */
+
+@media (max-width: 1280px) {
+  /* Ajustez les styles pour les écrans moyens ici */
+  .header img {
+    margin: 0 auto;
+    height: 60px;
+    margin-top: 10px;
+  }
+
+  .nav-bar {
+    flex-wrap: wrap;
+  }
+
+  #root {
+    /* background-color: aqua; */
+    width: 80%;
+  }
+
+  .search-bar {
+    width: 70%;
+  }
+  .container {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+  }
+
+  .card-comics {
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 30px;
+    text-decoration: none;
+    width: 80%;
+  }
+
+  .img-comics {
+    width: 100%;
+    object-fit: cover;
+    margin: 15px 0;
+    border: 2px solid #e2dddd;
+    border-radius: 25px 70px;
+  }
+}
+@media (max-width: 980px) {
+  .nav-bar {
+    flex-wrap: wrap;
+  }
+
+  .search-bar {
+    width: 50%;
+  }
+  .container {
+    width: 80%;
+    height: auto;
+    border: 1px solid red;
+  }
+  #root {
+    /* background-color: aqua; */
+    width: 75%;
+  }
+  .card-comics {
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 30px;
+    text-decoration: none;
+    width: 60%;
+  }
+
+  .img-comics {
+    width: 100%;
+    object-fit: cover;
+    margin: 15px 0;
+    border: 2px solid #e2dddd;
+    border-radius: 25px 70px;
+  }
+}
