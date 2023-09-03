@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Nav from "../components/Nav";
 import Loader from "../components/Loader";
+import Cookies from "js-cookie";
+import { json } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
 const Comics = () => {
@@ -11,7 +13,6 @@ const Comics = () => {
   const [skip, setSkip] = useState(0);
   const [count, setCount] = useState();
   const [limit, setLimit] = useState(100);
-  console.log(limit);
 
   // requete axios
   useEffect(() => {
@@ -19,7 +20,7 @@ const Comics = () => {
     const fetchData = async () => {
       try {
         const title = search || "";
-        console.log(title);
+        // console.log(title);
         const response = await axios.get(
           `https://site--marvel-backend--r2txk865xjj8.code.run/comics?&title=${title}&skip=${skip}`
         );
@@ -37,6 +38,7 @@ const Comics = () => {
 
     fetchData();
   }, [search, skip]);
+
   return isLoading ? (
     <div>
       <Loader />
@@ -51,7 +53,7 @@ const Comics = () => {
             className="charac-skip"
             onClick={() => {
               setSkip(skip - limit);
-              console.log("skip -", skip);
+              // console.log("skip -", skip);
             }}
           >
             PREVIOUS
@@ -88,7 +90,6 @@ const Comics = () => {
       <div className="card-comics container">
         {data.results.map(
           ({ thumbnail: { path, extension }, _id, title, description }) => {
-            // console.log(offerList);
             const imageUrl = path + "." + extension;
 
             return (
@@ -96,12 +97,25 @@ const Comics = () => {
                 <div className="card-wrap">
                   <div className="cart-img">
                     <p className="description-comics">{title}</p>
-                    <img
-                      className="img-comics"
-                      src={imageUrl}
-                      key={_id}
-                      alt=""
-                    />
+                    <div>
+                      <img
+                        className="img-comics"
+                        src={imageUrl}
+                        key={_id}
+                        alt=""
+                      />
+                      <div
+                        className="favoris"
+                        onClick={() => {
+                          const newFavorite = [...favorite];
+                          newFavorite.push(imageUrl, title);
+                          setfavorite(newFavorite);
+                          console.log(favorite);
+                        }}
+                      >
+                        <i className="fa-solid fa-star fa-xl fa-border "></i>
+                      </div>
+                    </div>
                   </div>
                   <p className="description-comics">{description}</p>
                 </div>

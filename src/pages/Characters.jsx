@@ -109,7 +109,7 @@ const Charaters = () => {
                     <h3 className="description-comics">{name}</h3>
                     <div className="favoris">
                       <img className="img-Charaters" src={imageUrl} alt="" />
-                      <i class="fa-solid fa-star fa-xl fa-border "></i>
+                      <i className="fa-solid fa-star fa-xl fa-border "></i>
                     </div>
                   </div>
                 </main>

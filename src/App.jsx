@@ -9,9 +9,11 @@ import Charaters from "./pages/Characters";
 import Character from "./pages/Character";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
+import Favoris from "./pages/Favoris";
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token"));
+  const [favorisComics, setFavorisComics] = useState([]);
 
   useEffect(() => {
     if (token) {
@@ -20,6 +22,7 @@ function App() {
       Cookies.remove("token");
     }
   }, [token]);
+  // console.log("token app.jsx => ", token);
 
   return (
     <>
@@ -37,6 +40,17 @@ function App() {
           <Route
             path="/user/login"
             element={<Login token={token} setToken={setToken} />}
+          />
+          <Route
+            path="/favoris"
+            element={
+              <Favoris
+                token={token}
+                setToken={setToken}
+                favorisComics={favorisComics}
+                setFavorisComics={setFavorisComics}
+              />
+            }
           />
         </Routes>
       </Router>
