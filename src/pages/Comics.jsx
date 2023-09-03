@@ -112,13 +112,18 @@ const Comics = () => {
                         onClick={() => {
                           const newFavoritesComics = [...favoritesComics];
                           newFavoritesComics.push({
-                            imageUrl: imageUrl,
+                            _id: _id,
                             title: title,
+                            imageUrl: imageUrl,
                           });
                           setFavoritesComics(newFavoritesComics);
-                          Cookies.set("favorites", newFavoritesComics, {
-                            expires: 30,
-                          });
+                          Cookies.set(
+                            "favorites",
+                            JSON.stringify(newFavoritesComics),
+                            {
+                              expires: 30,
+                            }
+                          );
 
                           console.log("favorites", newFavoritesComics);
                         }}

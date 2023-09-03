@@ -95,8 +95,6 @@ const Signup = () => {
             placeholder="Password"
           />
         </form>
-      </div>
-      <Link to="/characters">
         <button
           onClick={handleSubmit}
           className="form-validation"
@@ -104,7 +102,7 @@ const Signup = () => {
         >
           Sign up
         </button>
-      </Link>
+      </div>
       <Link to="/user/login">
         <p>Already registered ? Use Log in !</p>
       </Link>

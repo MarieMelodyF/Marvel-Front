@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
+import Cookies from "js-cookie";
 
 const Charaters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -11,6 +12,8 @@ const Charaters = () => {
   const [limit, setLimit] = useState(100);
   const [count, setCount] = useState();
   const [page, setPage] = useState();
+  const [favoritesCharacters, setFavoritesCharacters] = useState([]);
+
   // console.log("state count", count);
   // console.log("state skip", skip);
   // console.log("test", page / 100);
@@ -103,17 +106,37 @@ const Charaters = () => {
             //   console.log(id);
 
             return (
-              <Link to={`/comics/${_id}`} key={index}>
-                <main key={id}>
-                  <div className="card-wrap">
-                    <h3 className="description-characters">{name}</h3>
-                    <div className="favoris">
+              <main key={id}>
+                <div className="card-wrap">
+                  <h3 className="description-characters">{name}</h3>
+                  <div className="favoris">
+                    <Link to={`/Characters/${_id}`} key={index}>
                       <img className="img-Charaters" src={imageUrl} alt="" />
-                      <i className="fa-solid fa-star fa-xl fa-border "></i>
-                    </div>
+                    </Link>
+                    <i
+                      className="fa-solid fa-star fa-xl fa-border "
+                      onClick={() => {
+                        const newFavoritesCharacters = [...favoritesCharacters];
+                        newFavoritesCharacters.push({
+                          _id: _id,
+                          name: name,
+                          imageUrl: imageUrl,
+                        });
+                        setFavoritesCharacters(newFavoritesCharacters);
+                        Cookies.set(
+                          "favoritesCharacters",
+                          JSON.stringify(newFavoritesCharacters),
+                          {
+                            expires: 30,
+                          }
+                        );
+
+                        console.log("favoritesChar", newFavoritesCharacters);
+                      }}
+                    ></i>
                   </div>
-                </main>
-              </Link>
+                </div>
+              </main>
             );
           }
         )}

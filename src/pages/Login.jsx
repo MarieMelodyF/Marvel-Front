@@ -66,15 +66,18 @@ const Login = ({ token, setToken }) => {
               setPassword(event.target.value);
             }}
           />
-          <button
-            className="form-validation"
-            type="submit"
-            value="Se connecter"
-          >
-            Log in
-          </button>
+          <div className="validation">
+            <button
+              className="form-validation"
+              type="submit"
+              value="Se connecter"
+            >
+              Log in
+            </button>
+          </div>
         </form>
       </div>
+
       <Link to="/user/signup">
         <p className="subscribe">
           You dont have a account ? Come on, come to Sign up !
