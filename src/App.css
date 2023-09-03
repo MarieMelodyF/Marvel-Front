@@ -538,7 +538,6 @@ form {
 /* --------------------- */
 
 @media (max-width: 1280px) {
-  /* Ajustez les styles pour les écrans moyens ici */
   .header img {
     margin: 0 auto;
     height: 60px;
