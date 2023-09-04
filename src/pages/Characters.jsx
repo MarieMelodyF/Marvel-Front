@@ -104,13 +104,14 @@ const Charaters = () => {
             const imageUrl = path + "." + extension;
             const id = _id;
             //   console.log(id);
+            // console.log(imageUrl);
 
             return (
               <main key={id}>
                 <div className="card-wrap">
                   <h3 className="description-characters">{name}</h3>
                   <div className="favoris">
-                    <Link to={`/Characters/${_id}`} key={index}>
+                    <Link to={`/comics/${_id}`} key={index}>
                       <img className="img-Charaters" src={imageUrl} alt="" />
                     </Link>
                     <i
