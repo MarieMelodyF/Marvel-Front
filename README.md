@@ -29,7 +29,7 @@ Characters also in these comics
 
 Show your favorites comics & characters.
 
-<!-- ![Favorites](src/images/favs.gif) -->
+[Favorite](src/images/favs.gif)
 
 ## Sign up
 
