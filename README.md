@@ -7,7 +7,7 @@
 ## Comics
 
 Show all marvel comics and go to the next page.
-you can search comics by title
+you can search comics by title.
 
 ![Comics Pages](src/images/comicspage.png)
 
