@@ -29,7 +29,6 @@ Characters also in these comics
 
 Show your favorites comics & characters.
 
-[Favorite](src/images/favs.gif)
 
 ## Sign up
 
