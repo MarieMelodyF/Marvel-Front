@@ -1,4 +1,4 @@
-# MARVEL - FRONTEND
+# MARVEL PROJECT
 
 ## HomePage
 
@@ -6,15 +6,15 @@
 
 ## Comics
 
-Show all marvel comics by page.
-Add or remove favorite comic (if user logged).
-Search comics by title.
+Show all marvel comics and go to the next page.
+you can search comics by title
 
 ![Comics Pages](src/images/comicspage.png)
 
 ## Characters
 
-Show all marvel characters by page.
+Show all marvel characters and go to the next page.
+you can search comics by name
 
 ![Characters](src/images/characterespage.png)
 
